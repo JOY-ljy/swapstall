@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摊主故事 - 夜市职业体验</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFB72B',
+                        secondary: '#1E40AF',
+                        neutral: '#FFF9F0',
+                        textDark: '#1F2937',
+                        textLight: '#6B7280',
+                    },
+                    fontFamily: {
+                        sans: ['PingFang SC', 'Helvetica Neue', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .tab-active {
+                border-bottom: 2px solid #FFB72B;
+                color: #FFB72B;
+                font-weight: 500;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral min-h-screen font-sans text-textDark pb-20">
+    <!-- 顶部导航栏 -->
+    <header class="sticky top-0 z-50 bg-white flex items-center px-4 py-3 shadow-sm">
+        <a href="javascript:history.back()" class="text-textDark">
+            <i class="ri-arrow-left-line text-xl"></i>
+        </a>
+        <h1 class="flex-1 text-center font-medium">摊主故事</h1>
+        <i class="ri-share-line text-xl text-textLight"></i>
+    </header>
+
+    <!-- 顶部封面大图 -->
+    <div class="w-full">
+        <img src="https://picsum.photos/seed/storycover/800/360" alt="摊主故事封面" class="w-full h-48 object-cover">
+    </div>
+
+    <!-- 故事标题与作者信息 -->
+    <div class="bg-white mx-4 -mt-8 relative z-10 rounded-xl shadow-md p-4">
+        <h2 class="text-lg font-bold">一碗热干面，二十载烟火人生</h2>
+        <div class="flex items-center gap-3 mt-3">
+            <img src="https://picsum.photos/seed/chefzhou/50/50" alt="周爹爹" class="w-10 h-10 rounded-full object-cover">
+            <div>
+                <p class="font-medium">周爹爹</p>
+                <p class="text-xs text-textLight mt-1">从业40年 · 老牌摊主</p>
+            </div>
+        </div>
+        <div class="flex items-center justify-between mt-3 text-xs text-textLight">
+            <span>发布于 2026-06-10</span>
+            <div class="flex gap-4">
+                <span><i class="ri-eye-line"></i> 1289 阅读</span>
+                <span><i class="ri-heart-line"></i> 216 点赞</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 标签切换栏 -->
+    <div class="bg-white mt-4 mx-4 rounded-xl shadow-sm flex">
+        <div class="flex-1 py-3 text-center text-sm tab-active">故事详情</div>
+        <div class="flex-1 py-3 text-center text-sm text-textLight">相关体验</div>
+        <div class="flex-1 py-3 text-center text-sm text-textLight">网友评论</div>
+    </div>
+
+    <!-- 正文内容 -->
+    <div class="bg-white mx-4 mt-3 rounded-xl shadow-sm p-4">
+        <p class="text-sm text-textDark leading-relaxed">
+            从街边小摊到人人熟知的老字号，一晃便是四十个春秋。每天天不亮就起身准备食材，熬制汤底、调配酱料，日复一日坚守着传统手艺。
+        </p>
+        <p class="text-sm text-textDark leading-relaxed mt-3">
+            一碗简单的热干面，承载的不只是味道，更是一座城市的记忆。来往的食客换了一批又一批，不变的是始终如一的匠心与热情。如今也希望把这份手艺与故事分享给更多热爱美食的朋友。
+        </p>
+
+        <!-- 内文配图 -->
+        <div class="mt-4">
+            <img src="https://picsum.photos/seed/storyimg/700/300" alt="摊位实拍" class="w-full rounded-lg object-cover">
+        </div>
+    </div>
+
+    <!-- 底部导航 -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-4 py-2">
+        <div class="flex justify-around">
+            <a href="index.html" class="flex flex-col items-center text-textLight">
+                <i class="ri-home-5-line text-xl"></i>
+                <span class="text-xs mt-1">首页</span>
+            </a>
+            <a href="javascript:;" class="flex flex-col items-center text-textLight">
+                <i class="ri-compass-line text-xl"></i>
+                <span class="text-xs mt-1">发现</span>
+            </a>
+            <a href="message.html" class="flex flex-col items-center text-textLight relative">
+                <i class="ri-chat-3-line text-xl"></i>
+                <span class="absolute -top-1 right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">13</span>
+                <span class="text-xs mt-1">消息</span>
+            </a>
+            <a href="profile.html" class="flex flex-col items-center text-textLight">
+                <i class="ri-user-line text-xl"></i>
+                <span class="text-xs mt-1">我的</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        // 标签点击切换样式
+        const tabs = document.querySelectorAll('.mx-4.flex > div');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(item => {
+                    item.classList.remove('tab-active');
+                    item.classList.add('text-textLight');
+                })
+                tab.classList.add('tab-active');
+                tab.classList.remove('text-textLight');
+            })
+        })
+    </script>
+</body>
+</html>

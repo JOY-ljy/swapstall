@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 - 夜市体验</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFB72B',
+                        secondary: '#1E40AF',
+                        neutral: '#FFF9F0',
+                        textDark: '#1F2937',
+                        textLight: '#6B7280',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral min-h-screen font-sans text-textDark pb-20">
+    <!-- 头部用户信息 -->
+    <div class="bg-gradient-to-r from-amber-400 to-yellow-500 px-4 pt-10 pb-6">
+        <div class="flex items-center gap-4">
+            <img src="https://picsum.photos/80/80?random=20" alt="头像" class="w-16 h-16 rounded-full border-2 border-white">
+            <div class="text-white">
+                <h2 class="text-lg font-bold">夜市体验用户</h2>
+                <p class="text-sm opacity-90 mt-1">体验达人 · 活跃用户</p>
+            </div>
+            <div class="ml-auto">
+                <i class="ri-settings-3-line text-xl text-white"></i>
+            </div>
+        </div>
+        <!-- 积分徽章栏 -->
+        <div class="flex justify-around mt-6 bg-white/20 rounded-xl py-3">
+            <div class="text-center text-white">
+                <p class="text-xl font-bold">268</p>
+                <p class="text-xs">我的积分</p>
+            </div>
+            <div class="text-center text-white">
+                <p class="text-xl font-bold">8</p>
+                <p class="text-xs">获得徽章</p>
+            </div>
+            <div class="text-center text-white">
+                <p class="text-xl font-bold">12</p>
+                <p class="text-xs">全部预约</p>
+            </div>
+            <div class="text-center text-white">
+                <p class="text-xl font-bold">5</p>
+                <p class="text-xs">我的评价</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 功能菜单列表 -->
+    <div class="mx-4 -mt-4 relative z-10 bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="flex items-center justify-between px-4 py-3 border-b border-gray-100">
+            <div class="flex items-center gap-3">
+                <i class="ri-calendar-check-line text-primary text-xl"></i>
+                <span>我的预约</span>
+            </div>
+            <i class="ri-arrow-right-s-line text-textLight"></i>
+        </div>
+        <div class="flex items-center justify-between px-4 py-3 border-b border-gray-100">
+            <div class="flex items-center gap-3">
+                <i class="ri-medal-line text-amber-500 text-xl"></i>
+                <span>我的徽章</span>
+            </div>
+            <i class="ri-arrow-right-s-line text-textLight"></i>
+        </div>
+        <div class="flex items-center justify-between px-4 py-3 border-b border-gray-100">
+            <div class="flex items-center gap-3">
+                <i class="ri-star-line text-yellow-400 text-xl"></i>
+                <span>我的评价</span>
+            </div>
+            <i class="ri-arrow-right-s-line text-textLight"></i>
+        </div>
+        <div class="flex items-center justify-between px-4 py-3 border-b border-gray-100">
+            <div class="flex items-center gap-3">
+                <i class="ri-heart-line text-red-400 text-xl"></i>
+                <span>我的收藏</span>
+            </div>
+            <i class="ri-arrow-right-s-line text-textLight"></i>
+        </div>
+        <div class="flex items-center justify-between px-4 py-3">
+            <div class="flex items-center gap-3">
+                <i class="ri-coupon-line text-orange-400 text-xl"></i>
+                <span>优惠券</span>
+            </div>
+            <i class="ri-arrow-right-s-line text-textLight"></i>
+        </div>
+    </div>
+
+    <!-- 其他服务入口 -->
+    <div class="mt-4 mx-4 bg-white rounded-xl shadow-md p-4">
+        <h3 class="font-medium mb-3">更多服务</h3>
+        <div class="grid grid-cols-4 gap-4 text-center">
+            <div class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+                    <i class="ri-customer-service-line text-textLight"></i>
+                </div>
+                <span class="text-xs mt-2">在线客服</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+                    <i class="ri-question-line text-textLight"></i>
+                </div>
+                <span class="text-xs mt-2">帮助中心</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+                    <i class="ri-file-list-line text-textLight"></i>
+                </div>
+                <span class="text-xs mt-2">订单记录</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
+                    <i class="ri-shield-check-line text-textLight"></i>
+                </div>
+                <span class="text-xs mt-2">隐私协议</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部导航 -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-4 py-2">
+        <div class="flex justify-around">
+            <a href="index.html" class="flex flex-col items-center text-textLight">
+                <i class="ri-home-5-line text-xl"></i>
+                <span class="text-xs mt-1">首页</span>
+            </a>
+            <a href="#" class="flex flex-col items-center text-textLight">
+                <i class="ri-compass-line text-xl"></i>
+                <span class="text-xs mt-1">发现</span>
+            </a>
+            <a href="message.html" class="flex flex-col items-center text-textLight">
+                <i class="ri-chat-3-line text-xl"></i>
+                <span class="text-xs mt-1">消息</span>
+            </a>
+            <a href="#" class="flex flex-col items-center text-primary">
+                <i class="ri-user-fill text-xl"></i>
+                <span class="text-xs mt-1">我的</span>
+            </a>
+        </div>
+    </nav>
+</body>
+</html>

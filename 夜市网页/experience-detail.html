@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体验详情 - 夜市职业体验</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFB72B',
+                        secondary: '#1E40AF',
+                        neutral: '#FFF9F0',
+                        textDark: '#1F2937',
+                        textLight: '#6B7280',
+                    },
+                    fontFamily: {
+                        sans: ['PingFang SC', 'Helvetica Neue', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .tab-active {
+                border-bottom: 2px solid #FFB72B;
+                color: #FFB72B;
+                font-weight: 500;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral min-h-screen font-sans text-textDark pb-24">
+    <!-- 顶部返回栏 -->
+    <header class="sticky top-0 z-50 bg-white flex items-center px-4 py-3 shadow-sm">
+        <a href="javascript:history.back()" class="text-textDark">
+            <i class="ri-arrow-left-line text-xl"></i>
+        </a>
+        <h1 class="flex-1 text-center font-medium">体验详情</h1>
+        <i class="ri-share-line text-xl text-textLight"></i>
+    </header>
+
+    <!-- 顶部大图 -->
+    <div class="w-full">
+        <img src="https://picsum.photos/seed/reganmain/800/400" alt="热干面体验" class="w-full h-52 object-cover">
+    </div>
+
+    <!-- 基础信息卡片 -->
+    <div class="bg-white mx-4 -mt-6 relative z-10 rounded-xl shadow-md p-4">
+        <div class="flex justify-between items-start">
+            <div>
+                <h2 class="text-lg font-bold">跟陈师傅学做武汉热干面</h2>
+                <div class="flex items-center gap-2 mt-2">
+                    <span class="bg-primary/10 text-primary text-xs px-2 py-1 rounded">热门体验</span>
+                    <span class="text-xs text-textLight">已有 562 人报名</span>
+                </div>
+            </div>
+            <div class="text-right">
+                <p class="text-primary text-xl font-bold">¥89</p>
+                <p class="text-xs text-textLight">/每人</p>
+            </div>
+        </div>
+
+        <!-- 时长/时间/地点 -->
+        <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-gray-100">
+            <div class="text-center">
+                <p class="text-sm font-medium">体验时长</p>
+                <p class="text-xs text-textLight mt-1">约 90 分钟</p>
+            </div>
+            <div class="text-center border-x border-gray-100">
+                <p class="text-sm font-medium">体验时间</p>
+                <p class="text-xs text-textLight mt-1">每日 14:00-18:00</p>
+            </div>
+            <div class="text-center">
+                <p class="text-sm font-medium">体验地点</p>
+                <p class="text-xs text-textLight mt-1">武汉特色美食街</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 分类标签栏 -->
+    <div class="bg-white mt-4 mx-4 rounded-xl shadow-sm flex">
+        <div class="flex-1 py-3 text-center text-sm tab-active">体验详情</div>
+        <div class="flex-1 py-3 text-center text-sm text-textLight">体验流程</div>
+        <div class="flex-1 py-3 text-center text-sm text-textLight">用户评价</div>
+        <div class="flex-1 py-3 text-center text-sm text-textLight">注意事项</div>
+    </div>
+
+    <!-- 详情内容区域 -->
+    <div class="bg-white mx-4 mt-3 rounded-xl shadow-sm p-4">
+        <h3 class="font-medium mb-3">体验介绍</h3>
+        <p class="text-sm text-textLight leading-relaxed">
+            跟随从业二十余年的陈师傅，学习正宗武汉热干面制作技艺。从调面、煮面到秘制芝麻酱调配，全程手把手教学，学完即可独立制作地道热干面，感受武汉市井烟火气。
+        </p>
+
+        <div class="mt-4 pt-4 border-t border-gray-100">
+            <h3 class="font-medium mb-3">摊主介绍</h3>
+            <div class="flex items-center gap-3">
+                <img src="https://picsum.photos/seed/chefchen/60/60" alt="陈师傅" class="w-12 h-12 rounded-full object-cover">
+                <div>
+                    <p class="font-medium">陈师傅</p>
+                    <p class="text-xs text-textLight mt-1">深耕热干面行业22年 · 人气摊主</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部固定预约栏 -->
+    <div class="fixed bottom-[50px] left-0 right-0 bg-white border-t border-gray-200 px-4 py-3 flex items-center gap-4">
+        <div>
+            <p class="text-primary font-bold text-lg">¥89<span class="text-xs text-textLight font-normal">/人</span></p>
+            <p class="text-xs text-red-500">剩余席位不多</p>
+        </div>
+        <button class="flex-1 bg-primary text-white py-2 rounded-full font-medium">
+            立即预约
+        </button>
+    </div>
+
+    <!-- 底部导航 -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-4 py-2">
+        <div class="flex justify-around">
+            <a href="index.html" class="flex flex-col items-center text-textLight">
+                <i class="ri-home-5-line text-xl"></i>
+                <span class="text-xs mt-1">首页</span>
+            </a>
+            <a href="javascript:;" class="flex flex-col items-center text-textLight">
+                <i class="ri-compass-line text-xl"></i>
+                <span class="text-xs mt-1">发现</span>
+            </a>
+            <a href="message.html" class="flex flex-col items-center text-textLight relative">
+                <i class="ri-chat-3-line text-xl"></i>
+                <span class="absolute -top-1 right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">13</span>
+                <span class="text-xs mt-1">消息</span>
+            </a>
+            <a href="profile.html" class="flex flex-col items-center text-textLight">
+                <i class="ri-user-line text-xl"></i>
+                <span class="text-xs mt-1">我的</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        // 标签切换交互
+        const tabs = document.querySelectorAll('.mx-4.flex > div');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(item => {
+                    item.classList.remove('tab-active');
+                    item.classList.add('text-textLight');
+                })
+                tab.classList.add('tab-active');
+                tab.classList.remove('text-textLight');
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>消息 - 夜市职业体验</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFB72B',
+                        secondary: '#1E40AF',
+                        neutral: '#FFF9F0',
+                        textDark: '#1F2937',
+                        textLight: '#6B7280',
+                    },
+                    fontFamily: {
+                        sans: ['PingFang SC', 'Helvetica Neue', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .tab-active {
+                border-bottom: 2px solid #FFB72B;
+                color: #FFB72B;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral min-h-screen font-sans text-textDark pb-20">
+    <!-- 顶部标题 -->
+    <header class="bg-white px-4 py-4 shadow-sm">
+        <h1 class="text-center text-lg font-bold">消息</h1>
+    </header>
+
+    <!-- 顶部标签栏（对齐UI：预约提醒/系统通知/互动消息/客服） -->
+    <div class="bg-white flex px-2">
+        <div class="flex-1 py-3 text-center text-sm tab-active">预约提醒</div>
+        <div class="flex-1 py-3 text-center text-sm text-textLight">系统通知</div>
+        <div class="flex-1 py-3 text-center text-sm text-textLight">互动消息</div>
+        <div class="flex-1 py-3 text-center text-sm text-textLight">客服</div>
+    </div>
+
+    <!-- 分割线 -->
+    <div class="h-1 bg-gray-100"></div>
+
+    <!-- 消息列表区域 -->
+    <main class="px-4 py-3 space-y-3">
+        <!-- 消息项 1 -->
+        <div class="bg-white rounded-lg p-3 flex items-center gap-3 shadow-sm">
+            <img src="https://picsum.photos/seed/shop1/60/60" alt="摊位头像" class="w-12 h-12 rounded-full object-cover">
+            <div class="flex-1">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-medium text-sm">武汉热干面体验</h3>
+                    <span class="text-xs text-textLight">今天 09:20</span>
+                </div>
+                <p class="text-xs text-textLight mt-1 line-clamp-1">您的预约已确认，请按时前往体验地点</p>
+            </div>
+            <span class="w-4 h-4 rounded-full bg-red-500 text-white text-xs flex items-center justify-center">1</span>
+        </div>
+
+        <!-- 消息项 2 -->
+        <div class="bg-white rounded-lg p-3 flex items-center gap-3 shadow-sm">
+            <img src="https://picsum.photos/seed/shop2/60/60" alt="摊位头像" class="w-12 h-12 rounded-full object-cover">
+            <div class="flex-1">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-medium text-sm">豆皮制作体验</h3>
+                    <span class="text-xs text-textLight">昨天 16:45</span>
+                </div>
+                <p class="text-xs text-textLight mt-1 line-clamp-1">体验时间临时调整，详情请查看预约记录</p>
+            </div>
+        </div>
+
+        <!-- 消息项 3 -->
+        <div class="bg-white rounded-lg p-3 flex items-center gap-3 shadow-sm">
+            <img src="https://picsum.photos/seed/notice/60/60" alt="平台头像" class="w-12 h-12 rounded-full object-cover">
+            <div class="flex-1">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-medium text-sm">平台通知</h3>
+                    <span class="text-xs text-textLight">06-11</span>
+                </div>
+                <p class="text-xs text-textLight mt-1 line-clamp-1">本周夜市体验周活动火热进行中，超多优惠等你来</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- 底部客服聊天入口（单独板块，对齐UI） -->
+    <div class="fixed bottom-[60px] left-4 right-4 bg-white rounded-lg p-3 shadow-md">
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full bg-amber-50 flex items-center justify-center">
+                <i class="ri-customer-service-2-line text-primary text-xl"></i>
+            </div>
+            <div class="flex-1">
+                <h3 class="font-medium text-sm">在线客服</h3>
+                <p class="text-xs text-textLight mt-1">有任何问题都可以在这里咨询我们</p>
+            </div>
+            <i class="ri-arrow-right-s-line text-textLight"></i>
+        </div>
+    </div>
+
+    <!-- 底部导航（保持全局跳转逻辑，消息页高亮） -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-4 py-2">
+        <div class="flex justify-around">
+            <a href="index.html" class="flex flex-col items-center text-textLight">
+                <i class="ri-home-5-line text-xl"></i>
+                <span class="text-xs mt-1">首页</span>
+            </a>
+            <!-- 发现 不跳转 -->
+            <a href="javascript:;" class="flex flex-col items-center text-textLight">
+                <i class="ri-compass-line text-xl"></i>
+                <span class="text-xs mt-1">发现</span>
+            </a>
+            <a href="message.html" class="flex flex-col items-center text-primary">
+                <i class="ri-chat-3-fill text-xl"></i>
+                <span class="text-xs mt-1">消息</span>
+            </a>
+            <a href="profile.html" class="flex flex-col items-center text-textLight">
+                <i class="ri-user-line text-xl"></i>
+                <span class="text-xs mt-1">我的</span>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        // 标签点击切换激活样式
+        const tabs = document.querySelectorAll('.bg-white > div.flex > div');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(item => {
+                    item.classList.remove('tab-active');
+                    item.classList.add('text-textLight');
+                })
+                tab.classList.add('tab-active');
+                tab.classList.remove('text-textLight');
+            })
+        })
+    </script>
+</body>
+</html>
